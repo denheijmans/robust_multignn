@@ -1,0 +1,20 @@
+{
+  "data_dir": "data",
+  "dataset": "Medium_LI",
+  "data_seed": 0,
+  "model_seed": 0,
+  "seed": [0, 1, 2],
+  "device": "cuda:0",
+  "model_type": "multigin_scatter",
+  "train_type": "baseline",
+  "attack_type": "uniform_aml",
+  "attack_params": {
+    "attack_ratio": [0.1],
+    "sample_size": 50
+  },
+  "loader_params": {
+    "batch_size": 8192,
+    "num_neighbors": [[50, 50]],
+    "shuffle": true
+  }
+}

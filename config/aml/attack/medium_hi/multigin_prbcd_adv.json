@@ -1,0 +1,31 @@
+{
+  "data_dir": "data",
+  "dataset": "Medium_HI",
+  "data_seed": 0,
+  "model_seed": 0,
+  "seed": [0, 1, 2],
+  "device": "cuda:0",
+  "model_type": "multigin_scatter",
+  "train_type": "adv",
+  "adv_train_params": {
+    "attack_type": "prbcd_aml",
+    "attack_ratio": 0.05
+  },
+  "attack_type": "prbcd_aml",
+  "attack_params": {
+    "attack_ratio": [0.0, 0.005, 0.01, 0.02, 0.05, 0.1],
+    "sample_size": 50,
+    "lr": 0.1,
+    "max_epochs": 100,
+    "max_resamples": 30,
+    "min_epochs": 10,
+    "patience": 15,
+    "block_size": [[512, 1300000]]
+  },
+  "loader_params": {
+    "batch_size": 8192,
+    "num_neighbors": [[50, 50]],
+    "shuffle": true
+  },
+  "display_interval": 5
+}

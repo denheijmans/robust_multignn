@@ -1,0 +1,31 @@
+{
+  "data_dir": "data",
+  "dataset": "subgraph_pattern_detection",
+  "data_seed": 0,
+  "model_seed": [0, 1, 2],
+  "seed": [0, 1, 2],
+  "device": "cuda:0",
+  "model_type": "multigin",
+  "train_type": "adv",
+  "adv_train_params": {
+    "attack_type": "prbcd",
+    "attack_ratio": [0.005, 0.01, 0.02, 0.05, 0.1]
+  },
+  "attack_type": "prbcd",
+  "attack_params": {
+    "max_resamples": 50,
+    "max_epochs": 100,
+    "lr": 0.1,
+    "attack_ratio": [0.0, 0.005, 0.01, 0.02, 0.05, 0.1],
+    "sample_size": 25,
+    "regularizer_terms": {
+      "cycle_loss": 0.05
+    }
+  },
+  "loader_params": {
+    "batch_size": 32,
+    "num_neighbors": [[10, 10, 10, 10, 5, 5]],
+    "shuffle": true
+  },
+  "display_interval": 10
+}

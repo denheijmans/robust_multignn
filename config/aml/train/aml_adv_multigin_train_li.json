@@ -1,0 +1,50 @@
+{
+    "data_dir": "data",
+    "dataset": "Small_LI",
+    "data_seed": 0,
+    "seed": 0,
+    "device": "cuda:0",
+    "model_type": "multigin_scatter",
+    "train_type": "adv",
+    "init_artifact": "multigin_scatter-baseline-Small_LI_0-0",
+    "init_artifact_version": "latest",
+    "pretrain_epochs": 0,
+    "model_params": {
+      "hidden_dim": 32,
+      "num_layers": 2,
+      "edge_dim": 4,
+      "dropout": 0.1,
+      "ego_dim": 1,
+      "eps": 0.0,
+      "train_eps": true,
+      "port_vocab_size": 2048,
+      "port_emb_dim": 8,
+      "reverse_mp": true,
+      "edge_updates": true
+    },
+    "loader_params": {
+      "batch_size": 8192,
+      "num_neighbors": [[50, 50]],
+      "shuffle": true
+    },
+    "train_params": {
+      "max_epochs": 40,
+      "lr": 3e-3,
+      "weight_decay": 1e-4,
+      "min_epochs": 20,
+      "patience": 10,
+      "pos_weight": 7.0
+    },
+    "attack_type": "prbcd_aml",
+    "attack_params": {
+      "attack_ratio": 0.05,
+      "sample_size": 20,
+      "lr": 0.1,
+      "max_epochs": 30,
+      "max_resamples": 10,
+      "min_epochs": 5,
+      "patience": 8,
+      "block_size": [[512, 400000]]
+    },
+    "display_interval": 1
+  }

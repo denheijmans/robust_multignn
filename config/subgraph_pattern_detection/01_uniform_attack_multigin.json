@@ -1,0 +1,21 @@
+{
+  "data_dir": "data",
+  "dataset": "subgraph_pattern_detection",
+  "data_seed": 0,
+  "model_seed": [0, 1, 2],
+  "seed": [0, 1, 2],
+  "device": "cuda:0",
+  "model_type": "multigin",
+  "train_type": "baseline",
+  "attack_type": "uniform",
+  "attack_params": {
+    "attack_ratio": [0.0, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2],
+    "sample_size": 25
+  },
+  "loader_params": {
+    "batch_size": 32,
+    "num_neighbors": [[10, 10, 10, 10, 5, 5]],
+    "shuffle": true
+  },
+  "display_interval": 10
+}

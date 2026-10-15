@@ -1,0 +1,36 @@
+{
+  "data_dir": "data",
+  "dataset": "subgraph_pattern_detection",
+  "data_seed": 0,
+  "seed": [0,1,2],
+  "device": "cuda:0",
+  "model_type": "multigin",
+  "model_params": {
+    "hidden_dim": 64,
+    "num_layers": 6,
+    "ego_dim": 32,
+    "eps": 0.0,
+    "train_eps": true,
+    "dropout": 0.1,
+    "port_vocab_size": 32,
+    "port_emb_dim": 8,
+    "reverse_mp": true,
+    "edge_updates": true
+  },
+  "loader_params": {
+    "batch_size": 32,
+    "num_neighbors": [[10, 10, 10, 10, 5, 5]],
+    "shuffle": true
+  },
+  "train_params": {
+    "max_epochs": 120,
+    "lr": 1e-3,
+    "weight_decay": 1e-4,
+    "scheduler_params": {
+      "T_0": 8,
+      "T_mult": 2,
+      "eta_min": 1e-6
+    }
+  },
+  "display_interval": 10
+}

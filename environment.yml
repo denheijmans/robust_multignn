@@ -1,0 +1,29 @@
+name: robust-mgnn
+channels:
+  - pyg
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pytorch=2.4.0=*cuda12.1*
+  - pyg=2.6.1=*cu121*
+  - matplotlib=3.10.9
+  - networkx=3.6.1
+  - numpy=2.4.6
+  - pandas=3.0.3
+  - scipy=1.17.1
+  - scikit-learn=1.9.0
+  - torchmetrics=1.9.0
+  - tqdm=4.68.2
+  - wandb=0.27.2
+  - pytest=9.0.3
+  - pip
+  - pip:
+    - pyg_lib
+    - torch_scatter
+    - torch_sparse
+    - torch_cluster
+    - torch_spline_conv
+    - -f https://data.pyg.org/whl/torch-2.4.0+cu121.html

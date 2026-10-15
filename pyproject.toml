@@ -1,0 +1,10 @@
+[project]
+name = "robust_multignn"
+version = "0.1.0"
+
+[tool.setuptools]
+packages = ["robust_multignn", "experiments", "analysis"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
