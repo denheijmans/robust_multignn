@@ -119,10 +119,10 @@ python main.py attack             config/subgraph_pattern_detection/06b_attack_a
 | Fig. 3 – PR-AUC drop per pattern, PR-BCD vs. uniform | `01`, `03` | `python -m analysis.scripts.plot_attack_robustness_scatter` |
 | Fig. 4 – cycle regularizer weight trade-off | `04` | `python -m analysis.scripts.plot_lambda_tradeoff` |
 | Fig. 5 – adversarially trained models | `05a` → `06a` | `python -m analysis.scripts.plot_adv_training_cleveland` |
-| Fig. E.2 – adversarial training without the cycle regularizer | `05b` → `06b` | same script on the `05b`/`06b` runs |
-| Fig. E.3 – per-pattern PR-AUC vs. budget | `03` | `python -m analysis.scripts.plot_robustness_cleveland` |
-| Tab. E.1 – with vs. without cycle regularizer at 10% | `06a`, `06b` at 10% | no script; mean ± std over 3 model × 3 attack seeds |
-| Tab. D.1 – positive-class ratios | logged when the dataset is loaded | — |
+| Fig. D.2 – adversarial training without the cycle regularizer | `05b` → `06b` | same script on the `05b`/`06b` runs |
+| Fig. D.1 – per-pattern PR-AUC vs. budget | `03` | `python -m analysis.scripts.plot_robustness_cleveland` |
+| Tab. D.1 – with vs. without cycle regularizer at 10% | `06a`, `06b` at 10% | no script; mean ± std over 3 model × 3 attack seeds |
+| Tab. C.1 – positive-class ratios | logged when the dataset is loaded | — |
 
 *Verified for this release:* `train` with `--dryrun --device cpu` (1 epoch), `--count`, and that the plotting modules import. `attack`, `adv_train` and `adv_train_multigin` need the W&B model artifacts, so they were run only through the equivalent code path in `tests/test_smoke_pipeline.py`, not from the command line.
 
@@ -144,9 +144,9 @@ python main.py attack    config/aml/attack/small_hi/criminal/multigin_prbcd.json
 | Paper item | Configs | Notes |
 |---|---|---|
 | Fig. 6 – criminal threat model, Small HI/LI | `train/aml_multigin_train_{hi,li}`, `attack/small_{hi,li}/criminal/*` | Covers the standard model. The configs for criminal-threat-model adversarial training (ρ = 20%) and the plotting script are not included. |
-| Fig. E.4 – unconstrained threat model, Small/Medium × HI/LI | `train/*multigin*`, `attack/{small,medium}_{hi,li}/multigin_{prbcd,uniform}[_adv]` | Plotting script not included. |
-| Fig. E.1 – MultiPNA | `train/aml_multipna_train_{hi,li}` | The MultiPNA model and its standard training are included. The attack runs used an extended experiment pipeline that is not part of this release. |
-| Tab. D.2 – AML dataset statistics | — | Node/edge counts, illicit ratio and split are printed when a dataset is loaded. |
+| Fig. E.1 – unconstrained threat model, Small/Medium × HI/LI | `train/*multigin*`, `attack/{small,medium}_{hi,li}/multigin_{prbcd,uniform}[_adv]` | Plotting script not included. |
+| Fig. E.2 – MultiPNA | `train/aml_multipna_train_{hi,li}` | The MultiPNA model and its standard training are included. The attack runs used an extended experiment pipeline that is not part of this release. |
+| Tab. C.2 – AML dataset statistics | — | Node/edge counts, illicit ratio and split are printed when a dataset is loaded. |
 
 *Verified for this release:* preprocessing and `train` (MultiGIN and MultiPNA, `--dryrun --device cpu`, 1 epoch) on a small random CSV in the IBM format. The real Kaggle data and full-scale runs were not run. `attack` and `adv_train` were run only through `tests/test_smoke_pipeline.py`.
 
